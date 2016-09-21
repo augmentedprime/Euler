@@ -32,6 +32,7 @@ public class LargestPalindromProduct {
 				}
 			}
 		}
+		//I was curious about the factors were so I printed them out here
 		System.out.println(storeI);
 		System.out.println("*");
 		System.out.println(storeJ);
