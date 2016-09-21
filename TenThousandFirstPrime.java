@@ -6,8 +6,8 @@ public class TenThousandFirstPrime {
 		int count = 2;
 		int num = 0;
 		
-		if (n == 1) return 1;
-		if (n == 2) return 2;
+		if (n == 1) return 2;
+		if (n == 2) return 3;
 		
 		//check numbers until you get to the nth prime
 		for (int i=1; count<n; i++){
