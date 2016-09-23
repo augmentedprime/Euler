@@ -10,7 +10,7 @@ public class TenThousandFirstPrime {
 		if (n == 2) return 3;
 		
 		//check numbers until you get to the nth prime
-		for (int i=1; count<n; i++){
+		for (int i=1; count<n; i+=2){
 			num = i;
 			//for each number, check if divisible by any other number
 			for (int j=2; j<=i/2; j++){
