@@ -29,14 +29,14 @@ public class _009SpecialPythagoreanTriplet {
     
     public static int iterateABC(){
         for(int a=1; a<1000; a++){
-            for(int b=1; b<1000; b++){
-                for(int c=1; c<1000; c++){
+            for(int b=a; b<1000; b++){
+               int c = 1000 - a - b;
                     if (isPythagoreanTriplet(a, b, c) &&
                             isSum1000(a, b, c)){
                         System.out.println(a + " * " + b + " * " + c + " =");
                         return a * b * c;
                     }
-                }
+                
             }
         }
         return 0;
