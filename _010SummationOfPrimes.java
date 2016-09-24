@@ -8,20 +8,24 @@ public class _010SummationOfPrimes {
     
     
     
-    public static boolean[] createPrimeIsFalseArray(){
-        boolean[] prime_candidates = new boolean[2000000];
-        prime_candidates[0] = true;
-        prime_candidates[1] = true;
-        
-        
-        for (int i=2; i<1000000; i++){
-            for (int j=2; j*i<2000000; j++){
-                if (prime_candidates[i] == false){
-                prime_candidates[i*j] = true;
-                }
+    public static boolean[] createPrimeIsFalseArray(boolean[] array){
+        array[0] = true;
+        array[1] = true;
+        for (int i=2; i<array.length/2; i++){
+            if (array[i] == false){
+                eliminate_Multiples(array, i);
             }
         }
-        return prime_candidates;
+        return array;
+    }
+    
+    public static boolean[] eliminate_Multiples(boolean[] array, int index){
+        for (int j=2; j*index<array.length; j++){
+            array[index*j] = true;
+        }
+        
+        
+        return array;
     }
     
     public static long sumArrayElementsIfFalse(boolean[] array){
@@ -35,7 +39,8 @@ public class _010SummationOfPrimes {
     }
     
     public static void main(String[] args){
-        boolean[] prime_candidates = createPrimeIsFalseArray();
+        boolean[] array = new boolean[2000000]; 
+        boolean[] prime_candidates = createPrimeIsFalseArray(array);
         long answer = sumArrayElementsIfFalse(prime_candidates);
         System.out.println(answer);
     }

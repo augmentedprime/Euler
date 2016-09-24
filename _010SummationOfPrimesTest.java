@@ -8,7 +8,8 @@ public class _010SummationOfPrimesTest {
 
     @Test
     public void test() {
-        boolean[] prime_candidates = _010SummationOfPrimes.createPrimeIsFalseArray();
+        boolean[] array = new boolean[2000000];
+        boolean[] prime_candidates = _010SummationOfPrimes.createPrimeIsFalseArray(array);
         assertEquals(prime_candidates[0], true);
         assertEquals(prime_candidates[1], true);
         assertEquals(prime_candidates[2], false);
